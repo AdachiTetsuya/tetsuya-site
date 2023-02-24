@@ -18,6 +18,8 @@ DEBUG = strtobool(os.getenv("DEBUG", "n"))
 
 ALLOWED_HOSTS = [s.strip() for s in os.getenv("ALLOWED_HOSTS", "").split(",") if s]
 
+ALLOWED_HOSTS = ["52.199.38.147"]
+
 CORS_ALLOWED_ORIGINS = [s.strip() for s in os.getenv("CORS_ALLOWED_ORIGINS", "").split(",") if s]
 
 
