@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     
-    username = models.CharField("ユーザーネーム", max_length=20, unique=False)
+    username = models.CharField("ユーザーネーム", max_length=20, unique=True)
     email = models.EmailField("メールアドレス", unique=True)
 
     USERNAME_FIELD = "email"

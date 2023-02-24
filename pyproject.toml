@@ -11,11 +11,11 @@ python = "^3.11"
 django = "^4.1.7"
 djangorestframework = "^3.14.0"
 python-dotenv = "^1.0.0"
-dj-rest-auth = "^3.0.0"
 django-allauth = "^0.52.0"
 django-cors-headers = "^3.13.0"
 djangorestframework-simplejwt = "^5.2.2"
 dj-database-url = "^1.2.0"
+dj-rest-auth = "^3.0.0"
 
 
 [build-system]

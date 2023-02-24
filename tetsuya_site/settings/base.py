@@ -156,9 +156,12 @@ REST_FRAMEWORK = {
 
 SITE_ID = 1
 
-REST_USE_JWT = True
-JWT_AUTH_COOKIE = "mysite-auth"
-JWT_AUTH_REFRESH_COOKIE = "mysite-refresh-token"
+
+REST_AUTH = {
+    "USE_JWT" : True,
+    "JWT_AUTH_COOKIE" : "mysite-auth",
+    "JWT_AUTH_REFRESH_COOKIE" : "mysite-refresh-token",
+}
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(hours=1),
