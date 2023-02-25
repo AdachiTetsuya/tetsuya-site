@@ -1,10 +1,16 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+
 [tool.poetry]
+authors = ["Your Name <you@example.com>"]
+description = ""
 name = "tetsuya-site"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "tetsuya_site"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -18,6 +24,3 @@ dj-database-url = "^1.2.0"
 dj-rest-auth = "^3.0.0"
 
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
