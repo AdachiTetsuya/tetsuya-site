@@ -1,0 +1,29 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/tetsuya-site
+file_exists_behavior: OVERWRITE
+permissions:
+  - object: /home/ubuntu/tetsuya-site
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+hooks:
+  BeforeInstall:
+  AfterInstall:
+    - location: scripts/install_os_dependencies.sh
+      timeout: 300
+      runas: root
+    - location: scripts/install_python_dependencies.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/start_application.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+      timeout: 300
+      runas: root
+

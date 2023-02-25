@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: latest
+    commands:
+      - pip install poetry
+  build:
+    commands:
+      - poetry export --without-hashes -o requirements.txt
+      - printf "DJANGO_SETTINGS_MODULE=tetsuya-site.settings.prod\n" >>.env
+      - printf "ALLOWED_HOSTS='%s'\n" "${ALLOWED_HOSTS}" >>.env
+      - printf "CORS_ALLOWED_ORIGINS='%s'\n" "${CORS_ALLOWED_ORIGINS}" >>.env
+      # - printf "AWS_S3_ACCESS_KEY_ID='%s'\n" "${AWS_S3_ACCESS_KEY_ID}" >>.env
+      # - printf "AWS_S3_SECRET_ACCESS_KEY='%s'\n" "${AWS_S3_SECRET_ACCESS_KEY}" >>.env
+      # - printf "AWS_S3_CUSTOM_DOMAIN='%s'\n" "${AWS_S3_CUSTOM_DOMAIN}" >>.env
+      - printf "POSTGRES_NAME='%s'\n" "${POSTGRES_NAME}" >>.env
+      - printf "POSTGRES_USER='%s'\n" "${POSTGRES_USER}" >>.env
+      - printf "POSTGRES_PASSWORD='%s'\n" "${POSTGRES_PASSWORD}" >>.env
+      - printf "POSTGRES_HOST='%s'\n" "${POSTGRES_HOST}" >>.env
+      - printf "POSTGRES_PORT='%s'\n" "${POSTGRES_PORT}" >>.env
+      - printf "DEBUG='%s'\n" "${DEBUG}" >>.env
+artifacts:
+  files:
+    - "**/*"
+    
