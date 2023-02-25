@@ -21,5 +21,6 @@ django-cors-headers = "^3.13.0"
 djangorestframework-simplejwt = "^5.2.2"
 dj-database-url = "^1.2.0"
 dj-rest-auth = "^3.0.0"
+psycopg2 = "2.9.3"
 
 
