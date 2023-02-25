@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - poetry export --without-hashes -o requirements.txt
-      - printf "DJANGO_SETTINGS_MODULE=tetsuya-site.settings.prod\n" >>.env
+      - printf "DJANGO_SETTINGS_MODULE=tetsuya_site.settings.prod\n" >>.env
       - printf "ALLOWED_HOSTS='%s'\n" "${ALLOWED_HOSTS}" >>.env
       - printf "CORS_ALLOWED_ORIGINS='%s'\n" "${CORS_ALLOWED_ORIGINS}" >>.env
       # - printf "AWS_S3_ACCESS_KEY_ID='%s'\n" "${AWS_S3_ACCESS_KEY_ID}" >>.env
