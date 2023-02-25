@@ -5,6 +5,7 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/tetsuya-site
 python3.11 -m venv .venv
 . .venv/bin/activate
 pip install -U pip setuptools wheel --no-cache
+pip install psycopg2-binary
 pip install -U -r requirements.txt --no-cache
 pip install -U gunicorn --no-cache
 ./manage.py migrate
