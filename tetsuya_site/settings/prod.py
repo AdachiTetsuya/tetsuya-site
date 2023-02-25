@@ -2,8 +2,8 @@ import os
 
 from .base import *  # noqa: F401,F403
 
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY")
+AWS_S3_ACCESS_KEY_ID = os.environ.get("AWS_S3_ACCESS_KEY_ID")
+AWS_S3_SECRET_ACCESS_KEY = os.environ.get("AWS_S3_SECRET_ACCESS_KEY")
 
 STATICFILES_STORAGE = "storages.backends.s3boto3.S3ManifestStaticStorage"
 DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"

@@ -181,5 +181,7 @@ OLD_PASSWORD_FIELD_ENABLED = True
 # DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"
 
 AWS_STORAGE_BUCKET_NAME = "tetsuya-site-be-bucket"
+AWS_CLOUDFRONT_KEY = os.environ.get("AWS_CLOUDFRONT_KEY", None).encode("ascii")
+AWS_CLOUDFRONT_KEY_ID = os.environ.get("AWS_CLOUDFRONT_KEY_ID", None)
 
 CORS_ALLOW_CREDENTIALS = True
