@@ -11,8 +11,8 @@ phases:
       - printf "DJANGO_SETTINGS_MODULE=tetsuya_site.settings.prod\n" >>.env
       - printf "ALLOWED_HOSTS='%s'\n" "${ALLOWED_HOSTS}" >>.env
       - printf "CORS_ALLOWED_ORIGINS='%s'\n" "${CORS_ALLOWED_ORIGINS}" >>.env
-      # - printf "AWS_S3_ACCESS_KEY_ID='%s'\n" "${AWS_S3_ACCESS_KEY_ID}" >>.env
-      # - printf "AWS_S3_SECRET_ACCESS_KEY='%s'\n" "${AWS_S3_SECRET_ACCESS_KEY}" >>.env
+      - printf "AWS_S3_ACCESS_KEY_ID='%s'\n" "${AWS_S3_ACCESS_KEY_ID}" >>.env
+      - printf "AWS_S3_SECRET_ACCESS_KEY='%s'\n" "${AWS_S3_SECRET_ACCESS_KEY}" >>.env
       # - printf "AWS_S3_CUSTOM_DOMAIN='%s'\n" "${AWS_S3_CUSTOM_DOMAIN}" >>.env
       - printf "POSTGRES_NAME='%s'\n" "${POSTGRES_NAME}" >>.env
       - printf "POSTGRES_USER='%s'\n" "${POSTGRES_USER}" >>.env

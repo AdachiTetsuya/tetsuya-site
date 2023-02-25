@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "storages",
 ]
 
 MIDDLEWARE = [
@@ -111,11 +112,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "static"
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
 
 # User-uploaded files
 
@@ -182,9 +178,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 LOGOUT_ON_PASSWORD_CHANGE = False
 OLD_PASSWORD_FIELD_ENABLED = True
 
-# DEFAULT_FILE_STORAGE = "lets_code_be.storage_backends.MediaStorage"
+# DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"
 
-# AWS_STORAGE_BUCKET_NAME = "wao-letscode-py"
+# AWS_STORAGE_BUCKET_NAME = "tetsuya-site-be-bucket"
 # AWS_S3_REGION_NAME = "ap-northeast-1"
 
 CORS_ALLOW_CREDENTIALS = True

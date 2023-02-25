@@ -22,5 +22,7 @@ djangorestframework-simplejwt = "^5.2.2"
 dj-database-url = "^1.2.0"
 dj-rest-auth = "^3.0.0"
 psycopg2 = "2.9.3"
+boto3 = "^1.26.79"
+django-storages = "^1.13.2"
 
 
