@@ -181,6 +181,5 @@ OLD_PASSWORD_FIELD_ENABLED = True
 # DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"
 
 AWS_STORAGE_BUCKET_NAME = "tetsuya-site-be-bucket"
-# AWS_S3_REGION_NAME = "ap-northeast-1"
 
 CORS_ALLOW_CREDENTIALS = True
