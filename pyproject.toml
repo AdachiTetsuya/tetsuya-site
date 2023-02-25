@@ -10,7 +10,6 @@ authors = ["Your Name <you@example.com>"]
 description = ""
 name = "tetsuya-site"
 version = "0.1.0"
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
