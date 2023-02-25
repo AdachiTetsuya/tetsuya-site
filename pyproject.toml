@@ -22,5 +22,6 @@ djangorestframework-simplejwt = "^5.2.2"
 dj-database-url = "^1.2.0"
 dj-rest-auth = "^3.0.0"
 psycopg2 = "2.9.3"
+psycopg2-binary = "^2.9.5"
 
 
