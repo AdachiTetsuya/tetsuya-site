@@ -24,5 +24,6 @@ dj-rest-auth = "^3.0.0"
 psycopg2 = "2.9.3"
 boto3 = "^1.26.79"
 django-storages = "^1.13.2"
+django-ses = "^3.3.0"
 
 

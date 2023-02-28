@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "storages",
+    "django_ses",
 ]
 
 MIDDLEWARE = [
@@ -126,14 +127,18 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = os.getenv("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
 
-EMAIL_HOST = os.getenv("EMAIL_HOST", "")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", "25"))
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
-EMAIL_USE_TLS = EMAIL_PORT == 578
-EMAIL_USE_SSL = EMAIL_PORT == 465
+# EMAIL_HOST = os.getenv("EMAIL_HOST", "")
+# EMAIL_PORT = int(os.getenv("EMAIL_PORT", "25"))
+# EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
+# EMAIL_USE_TLS = EMAIL_PORT == 578
+# EMAIL_USE_SSL = EMAIL_PORT == 465
 
+AWS_SES_REGION_NAME="us-east-1"
+AWS_SES_REGION_ENDPOINT="email.us-east-1.amazonaws.com"
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "no-reply@example.com")
+AWS_SES_ACCESS_KEY_ID=os.getenv("AWS_SES_ACCESS_KEY_ID")
+AWS_SES_SECRET_ACCESS_KEY=os.getenv("AWS_SES_SECRET_ACCESS_KEY")
 
 # Logging
 
@@ -178,10 +183,11 @@ ACCOUNT_EMAIL_REQUIRED = True
 LOGOUT_ON_PASSWORD_CHANGE = False
 OLD_PASSWORD_FIELD_ENABLED = True
 
-# DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"
+DEFAULT_FILE_STORAGE = "tetsuya_site.storage_backends.MediaStorage"
 
+AWS_S3_CUSTOM_DOMAIN = os.environ.get("AWS_S3_CUSTOM_DOMAIN")
 AWS_STORAGE_BUCKET_NAME = "tetsuya-site-be-bucket"
-AWS_CLOUDFRONT_KEY = os.environ.get("AWS_CLOUDFRONT_KEY", None).encode("ascii")
-AWS_CLOUDFRONT_KEY_ID = os.environ.get("AWS_CLOUDFRONT_KEY_ID", None)
+# AWS_CLOUDFRONT_KEY = os.environ.get("AWS_CLOUDFRONT_KEY", None).encode("ascii")
+# AWS_CLOUDFRONT_KEY_ID = os.environ.get("AWS_CLOUDFRONT_KEY_ID", None)
 
 CORS_ALLOW_CREDENTIALS = True
