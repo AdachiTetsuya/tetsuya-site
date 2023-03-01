@@ -1,0 +1,8 @@
+{% extends "account/email/email_confirmation_message.txt" %}
+{% load account %}
+{% load i18n %}
+
+{% block content %}
+このメールアドレスを登録しようとしています。問題がなければ、確認のために以下の認証コードを画面に入力して送信してください。
+認証コード: {{ auth_code }}
+{% endblock %}

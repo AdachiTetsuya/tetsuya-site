@@ -25,3 +25,10 @@ class UserFile(models.Model):
         return f"file/{instance.id}/{basename}"
     name = models.CharField("名前", max_length=30)
     file = models.FileField("ファイル", upload_to=file_upload_path, blank=True, null=True)
+
+
+class AuthCode(models.Model):
+    """メールアドレス送る検証時に"""
+    email = models.EmailField(max_length=240)
+    auth_code = models.CharField("認証コード", max_length=6)
+    created_at = models.DateTimeField("作成日", auto_now_add=True)

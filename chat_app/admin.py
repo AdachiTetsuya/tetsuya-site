@@ -3,6 +3,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import (
     User,
     UserFile,
+    AuthCode,
 )
 
 
@@ -37,6 +38,15 @@ class UserAdmin(BaseUserAdmin):
 class UserFileAdmin(admin.ModelAdmin):
     list_display = ("id", "file")
     fields = ["file",]
+
+
+@admin.register(AuthCode)
+class AuthCodeAdmin(admin.ModelAdmin):
+    list_display = ("id", "email", "auth_code", "created_at")
+    fields = ["email","auth_code"]
+
+
+
 
 
 
