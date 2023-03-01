@@ -15,7 +15,7 @@ phases:
       - printf "AWS_S3_SECRET_ACCESS_KEY='%s'\n" "${AWS_S3_SECRET_ACCESS_KEY}" >>.env
       - printf "AWS_S3_CUSTOM_DOMAIN='%s'\n" "${AWS_S3_CUSTOM_DOMAIN}" >>.env
 
-      - printf "AWS_CLOUDFRONT_KEY='%s'\n" "${AWS_CLOUDFRONT_KEY}" >>.env
+      - printf "AWS_CLOUDFRONT_KEY='%s'\n" ${AWS_CLOUDFRONT_KEY} | tr 'attach' '\n' >>.env
       - printf "AWS_CLOUDFRONT_KEY_ID='%s'\n" "${AWS_CLOUDFRONT_KEY_ID}" >>.env
       
       - printf "POSTGRES_NAME='%s'\n" "${POSTGRES_NAME}" >>.env
