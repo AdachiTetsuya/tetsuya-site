@@ -41,7 +41,6 @@ def email_auth_code(request):
             'access_token': access_token,
             'refresh_token': refresh_token,
         }
-        print(JWTSerializer(data).data)
         return JsonResponse(JWTSerializer(data).data)
 
     return JsonResponse({"result": True})

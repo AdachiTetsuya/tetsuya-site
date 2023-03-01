@@ -1,5 +1,0 @@
-# 環境変数 WORD = app*le
-
-printf "Word='%s'\n" ${WORD} | tr '*' '\n'
-
-printf "Word='%s'\n" (${WORD} | tr 'r' '\n') >> env
