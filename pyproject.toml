@@ -12,26 +12,25 @@ profile = "black"
 sections = "FUTURE,STDLIB,DJANGO,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
 
 [tool.poetry]
+authors = ["Your Name <you@example.com>"]
+description = ""
 name = "tetsuya-site"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-django = "^4.1.7"
-djangorestframework = "^3.14.0"
-python-dotenv = "^1.0.0"
-django-allauth = "^0.52.0"
-django-cors-headers = "^3.13.0"
-djangorestframework-simplejwt = "^5.2.2"
+boto3 = "^1.26.79"
 dj-database-url = "^1.2.0"
 dj-rest-auth = "^3.0.0"
-psycopg2 = "2.9.3"
-boto3 = "^1.26.79"
-django-storages = "^1.13.2"
+django = "^4.1.7"
+django-allauth = "^0.52.0"
+django-cors-headers = "^3.13.0"
 django-ses = "^3.3.0"
-
+django-storages = "^1.13.2"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+psycopg2 = "2.9.3"
+python = "^3.11"
+python-dotenv = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.1.0"
@@ -39,4 +38,3 @@ flake8 = "^6.0.0"
 isort = "^5.12.0"
 pre-commit = "^3.1.1"
 toml-sort = "^0.22.4"
-
