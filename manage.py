@@ -6,7 +6,8 @@ import sys
 
 def main():
     from dotenv import load_dotenv
-    dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+
+    dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
 
     load_dotenv(dotenv_path)
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tetsuya_site.settings.dev")
@@ -16,5 +17,5 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

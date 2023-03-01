@@ -15,6 +15,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tetsuya_site.settings.dev')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tetsuya_site.settings.dev")
 
 application = get_asgi_application()

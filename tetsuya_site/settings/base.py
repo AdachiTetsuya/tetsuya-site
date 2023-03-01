@@ -134,11 +134,11 @@ EMAIL_BACKEND = os.getenv("EMAIL_BACKEND", "django.core.mail.backends.console.Em
 # EMAIL_USE_TLS = EMAIL_PORT == 578
 # EMAIL_USE_SSL = EMAIL_PORT == 465
 
-AWS_SES_REGION_NAME="us-east-1"
-AWS_SES_REGION_ENDPOINT="email.us-east-1.amazonaws.com"
+AWS_SES_REGION_NAME = "us-east-1"
+AWS_SES_REGION_ENDPOINT = "email.us-east-1.amazonaws.com"
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "no-reply@example.com")
-AWS_SES_ACCESS_KEY_ID=os.getenv("AWS_SES_ACCESS_KEY_ID")
-AWS_SES_SECRET_ACCESS_KEY=os.getenv("AWS_SES_SECRET_ACCESS_KEY")
+AWS_SES_ACCESS_KEY_ID = os.getenv("AWS_SES_ACCESS_KEY_ID")
+AWS_SES_SECRET_ACCESS_KEY = os.getenv("AWS_SES_SECRET_ACCESS_KEY")
 
 # Logging
 
@@ -166,9 +166,9 @@ SITE_ID = 1
 
 
 REST_AUTH = {
-    "USE_JWT" : True,
-    "JWT_AUTH_COOKIE" : "mysite-auth",
-    "JWT_AUTH_REFRESH_COOKIE" : "mysite-refresh-token",
+    "USE_JWT": True,
+    "JWT_AUTH_COOKIE": "mysite-auth",
+    "JWT_AUTH_REFRESH_COOKIE": "mysite-refresh-token",
 }
 
 SIMPLE_JWT = {
@@ -180,7 +180,7 @@ SIMPLE_JWT = {
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_ADAPTER = 'chat_app.adapter.AccountAdapter'
+ACCOUNT_ADAPTER = "chat_app.adapter.AccountAdapter"
 
 LOGOUT_ON_PASSWORD_CHANGE = False
 OLD_PASSWORD_FIELD_ENABLED = True

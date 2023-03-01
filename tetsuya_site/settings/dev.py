@@ -5,7 +5,7 @@ from .utils import strtobool
 
 DEBUG = strtobool(os.getenv("DEBUG", "y"))
 
-#コンソール上にユーザ登録確認メールを表示。ローカルで確認するため
+# コンソール上にユーザ登録確認メールを表示。ローカルで確認するため
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # AWS_S3_CUSTOM_DOMAIN = "d1j0joz20lcidd.cloudfront.net"

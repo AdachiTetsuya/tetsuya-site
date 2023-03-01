@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("chat_app", "0002_userfile_alter_user_username"),
     ]
