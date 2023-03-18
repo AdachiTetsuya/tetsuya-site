@@ -8,7 +8,7 @@ from allauth.account.models import EmailAddress
 from dj_rest_auth.serializers import JWTSerializer
 from dj_rest_auth.utils import jwt_encode
 
-from .adapter import AccountAdapter
+from .account_file.adapter import AccountAdapter
 from .email_func import send_email
 from .models import AuthCode, User
 from .serializers import UserSerializer
@@ -26,7 +26,7 @@ def email_auth_code(request):
     type = request.data.get("type")
 
     auth_code_instance = get_object_or_404(AuthCode, auth_code=auth_code)
-    if type == "signup":
+    if type == "signUp":
         email_instance = EmailAddress.objects.get(email=auth_code_instance.email)
         adapter = AccountAdapter()
         adapter.confirm_email(request, email_address=email_instance)
@@ -38,7 +38,7 @@ def email_auth_code(request):
             "access_token": access_token,
             "refresh_token": refresh_token,
         }
-        return JsonResponse(JWTSerializer(data).data)
+        return JsonResponse({"type": "signUp", "jwt_auth_data": JWTSerializer(data).data})
 
     return JsonResponse({"result": True})
 

@@ -164,11 +164,11 @@ REST_FRAMEWORK = {
 
 SITE_ID = 1
 
-
 REST_AUTH = {
     "USE_JWT": True,
     "JWT_AUTH_COOKIE": "mysite-auth",
     "JWT_AUTH_REFRESH_COOKIE": "mysite-refresh-token",
+    "PASSWORD_RESET_SERIALIZER": "chat_app.serializers.CustomPasswordResetSerializer",
 }
 
 SIMPLE_JWT = {
@@ -180,7 +180,8 @@ SIMPLE_JWT = {
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_ADAPTER = "chat_app.adapter.AccountAdapter"
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_ADAPTER = "chat_app.account_file.adapter.AccountAdapter"
 
 LOGOUT_ON_PASSWORD_CHANGE = False
 OLD_PASSWORD_FIELD_ENABLED = True
