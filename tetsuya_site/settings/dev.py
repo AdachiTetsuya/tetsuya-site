@@ -8,6 +8,8 @@ DEBUG = strtobool(os.getenv("DEBUG", "y"))
 # コンソール上にユーザ登録確認メールを表示。ローカルで確認するため
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+INTERNAL_IPS = ["127.0.0.1"]
+
 # AWS_S3_CUSTOM_DOMAIN = "d1j0joz20lcidd.cloudfront.net"
 
 # SQL の確認

@@ -3,8 +3,11 @@ from datetime import timedelta
 from pathlib import Path
 
 import dj_database_url
+from dotenv import load_dotenv
 
 from .utils import strtobool
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -44,6 +47,9 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "storages",
     "django_ses",
+    "django_celery_beat",
+    "django_celery_results",
+    "async_app",
 ]
 
 MIDDLEWARE = [
@@ -127,13 +133,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = os.getenv("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
 
-# EMAIL_HOST = os.getenv("EMAIL_HOST", "")
-# EMAIL_PORT = int(os.getenv("EMAIL_PORT", "25"))
-# EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
-# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
-# EMAIL_USE_TLS = EMAIL_PORT == 578
-# EMAIL_USE_SSL = EMAIL_PORT == 465
-
 AWS_SES_REGION_NAME = "us-east-1"
 AWS_SES_REGION_ENDPOINT = "email.us-east-1.amazonaws.com"
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "no-reply@example.com")
@@ -194,3 +193,7 @@ AWS_CLOUDFRONT_KEY = os.environ.get("AWS_CLOUDFRONT_KEY", None).encode("ascii")
 AWS_CLOUDFRONT_KEY_ID = os.environ.get("AWS_CLOUDFRONT_KEY_ID", None)
 
 CORS_ALLOW_CREDENTIALS = True
+
+# celery
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_BROKER_URL = os.environ.get("REDIS_URL", "redis://localhost:6379/1")
