@@ -1,3 +1,11 @@
-from django.contrib import admin  # noqa: F401,F403
+from django.contrib import admin
 
-# Register your models here.
+from .models import VideoFile
+
+
+@admin.register(VideoFile)
+class UserFileAdmin(admin.ModelAdmin):
+    list_display = ("id", "video")
+    fields = [
+        "video",
+    ]

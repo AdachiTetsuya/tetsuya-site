@@ -1,9 +1,14 @@
-from django.urls import path
+from django.urls import include, path
+from rest_framework import routers
 
-from . import views
+from .views import VideoFileViewSet, celery_test
 
 app_name = "async_app"
 
+router = routers.DefaultRouter()
+router.register("video-file", VideoFileViewSet, basename="video_file")
+
 urlpatterns = [
-    path("celery-test/", views.celery_test, name="celery_test"),
+    path("", include(router.urls)),
+    path("celery-test/", celery_test, name="celery_test"),
 ]
